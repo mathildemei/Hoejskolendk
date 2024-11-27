@@ -4,9 +4,33 @@ import Cards from "../components/Cards.astro";
 
 <section>
   <h1
-    class="flex flex-grow justify-center text-display-h5 text-Grey-950 font-display"
+    class="sm:flex flex-grow justify-center text-3xl pl-3 lg:flex flex-grow justify-center text-display-h5 text-Grey-950 font-display pt-5xl"
   >
     ER DU KLAR TIL DIT LIVS EVENTYR?
   </h1>
-  <Cards cardimage="HCM_img.jpg" />
+  <article class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+    <!-- Card 1 -->
+    <div class="w-[395px] h-[493px] bg-Orange-200 hover:bg-Orange-500">
+      <div class="bg_hcm flex items-center justify-center pt-3xl pb-3xl">
+        <img src="/cards/HCM_img.png" alt="Person spiser vandmelon" />
+      </div>
+      <div class="flex justify-center pt-xs pl-2xs pr-2xs">
+        <p
+          class="text-white font-primary-book text-lg md:text-xl lg:text-primary-h2"
+        >
+          New York, Caribien, Hawaii & Mexico
+        </p>
+      </div>
+    </div>
+  </article>
 </section>
+
+<style>
+  .bg_hcm {
+    background-image: url(/cards/HCM_bg.png);
+  }
+
+  .bg_hcm:hover {
+    background-image: url(/cards/HCM_bg_hover.png);
+  }
+</style>
