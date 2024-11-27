@@ -1,24 +1,20 @@
 ---
-const { rejsenavn, cardimage, cardimagalt, cardimgBg, imgBgHover } =
-  Astro.props;
+const {
+  rejsenavn,
+  cardimage,
+  cardimagalt,
+  cardimgBg,
+  imgBgHover,
+  bgColor,
+  hoverBgColor,
+} = Astro.props;
 ---
 
 <section>
-  <h1
-    class="sm:flex flex-grow justify-center text-3xl pl-3 lg:flex flex-grow justify-center text-display-h5 text-Grey-950 font-display pt-5xl"
-  >
-    ER DU KLAR TIL DIT LIVS EVENTYR?
-  </h1>
   <article class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-    <!-- Card 1 -->
     <div
-      class="w-fixed-card-width h-fixed-card-height bg-Orange-200 hover:bg-Orange-500"
+      class={`w-fixed-card-width h-fixed-card-height ${bgColor} group hover:${hoverBgColor}`}
     >
-      <!-- <div class="flex items-center justify-center pt-3xl pb-3xl"> -->
-      <!-- <div
-        class="flex items-center justify-center pt-3xl pb-3xl"
-        data-bg="test"
-      > -->
       <div
         class="flex items-center justify-center pt-3xl pb-3xl group"
         style={`background-image: url('/cards/${cardimgBg}');`}
@@ -27,13 +23,13 @@ const { rejsenavn, cardimage, cardimagalt, cardimgBg, imgBgHover } =
         onmouseover="this.style.backgroundImage = 'url(' + this.dataset.hoverbg + ')';"
         onmouseout="this.style.backgroundImage = 'url(' + this.dataset.cardimgbg + ')';"
       >
-        <!-- <div
-        class="flex items-center justify-center pt-3xl pb-3xl group"
-        style={`background-image: url('/cards/${cardimgBg}');`}
-        data-cardimgbg={`/cards/${cardimgBg}`}
-        data-hoverbg={`/cards/${imgBgHover}`}
-      > -->
-        <img src={cardimage} alt={cardimagalt} />
+        <div class="w-90 h-102 overflow-hidden">
+          <img
+            src={cardimage}
+            alt={cardimagalt}
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
       </div>
       <div class="flex justify-center pt-xs pl-2xs pr-2xs">
         <p
@@ -44,16 +40,4 @@ const { rejsenavn, cardimage, cardimagalt, cardimgBg, imgBgHover } =
       </div>
     </div>
   </article>
-
-  <!-- <style>
-    .group:hover {
-      background-image: url({`/cards/${imgBgHover}`});
-    }
-  </style> -->
-
-  <!-- <style>
-  .bg_hcm:hover {
-    background-image: url({imgBgHover});
-  }
-</style> -->
 </section>

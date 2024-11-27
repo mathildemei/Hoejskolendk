@@ -8,38 +8,14 @@ import Cards from "../components/Cards.astro";
   >
     ER DU KLAR TIL DIT LIVS EVENTYR?
   </h1>
-  <article class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-    <!-- Card 1 -->
-    <div
-      class="w-fixed-card-width h-fixed-card-height bg-Orange-200 hover:bg-Orange-500"
-    >
-      <div class="bg_hcm flex items-center justify-center pt-3xl pb-3xl">
-        <img src="/cards/HCM_img.png" alt="Person spiser vandmelon" />
-      </div>
-      <div class="flex justify-center pt-xs pl-2xs pr-2xs">
-        <p
-          class="text-white font-primary-book text-lg md:text-xl lg:text-primary-h2"
-        >
-          New York, Caribien, Hawaii & Mexico
-        </p>
-      </div>
-    </div>
-  </article>
+
   <Cards
     cardimage="cards/HCM_img.png"
     cardimagealt="Hip-hoppere"
     rejsenavn="New York, Hawaii, Caribien & Mexico"
     cardimgBg="HCM_bg.png"
     imgBgHover="HCM_bg_hover.png"
+    bgColor="bg-Orange-200"
+    bgColorHover="bg-Orange-500"
   />
 </section>
-
-<style>
-  .bg_hcm {
-    background-image: url(/cards/HCM_bg.png);
-  }
-
-  .bg_hcm:hover {
-    background-image: url(/cards/HCM_bg_hover.png);
-  }
-</style>
