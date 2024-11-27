@@ -1,0 +1,32 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<section
+  class="h-screen flex items-center justify-center bg-Green-900 relative"
+>
+  <!-- Background Video -->
+  <div class="absolute flex items-center justify-center inset-0">
+    <video class="w-[80%] h-[80%] object-cover" autoplay muted loop playsinline>
+      <source src="../public/Hero.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="z-10 text-center px-4">
+    <!-- Title -->
+    <h1 class="text-white font-display text-4xl md:text-5xl lg:text-display-h2">
+      HØJSKOLE I UDLANDET
+    </h1>
+
+    <!-- Subtitle -->
+    <h2
+      class="text-white font-primary-medium text-lg md:text-xl lg:text-2xl mb-6"
+    >
+      Eventyrlige højskoleophold i udlandet for unge
+    </h2>
+
+    <!-- Button -->
+    <Button class="">VAELG DIT EVENTYR</Button>
+  </div>
+</section>
