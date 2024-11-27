@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {}
 
+@font-face {
+    font-family: 'la-belle-aurora';
+    src: url('/public/font/labelleaurore-regular-webfont.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'futura-pt-book';
+    src: url('/public/font/FuturaCyrillicBook.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'futura-pt-medium';
+    src: url('/public/font/FuturaCyrillicMedium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'futura-pt-cond';
+    src: url('/public/font/futura-pt-bold-oblique-589e453384a18.woff') format('woff');
 }
