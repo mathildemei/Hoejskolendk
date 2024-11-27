@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import rismark from "../assets/images/rismark.jpg";
+---
+
+<section
+  class="h-screen w-full relative flex items-center justify-center bg-Green-900 overflow-hidden"
+>
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <Image
+      src={rismark}
+      alt="Background Image"
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- Green Box -->
+  <div
+    class="relative bg-[#12270D] text-white p-8 sm:p-12 lg:p-16 max-w-4xl w-full lg:w-[90%] mx-6 lg:mx-auto text-center border-8 border-transparent"
+  >
+    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-display leading-relaxed">
+      Vi har samlet <span class="text-Orange-500"
+        >alle vores eventyrlige rejser</span
+      > så det er lettere for dig, at skabe et <span class="text-Orange-500"
+        >overblik</span
+      > over vores priser. Du vil kunne læse mere om de specifikke ophold, og se
+      uddybende, hvad der er inkluderet i prisen. Det er muligt at undersøge
+      <span class="text-Orange-500">økonomisk støtte</span> hos din <span
+        class="text-Orange-500">kommune</span
+      > samt legater på legatmidler.dk eller legatbogen.dk
+    </h1>
+  </div>
+</section>
