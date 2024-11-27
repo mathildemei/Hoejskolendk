@@ -16,18 +16,22 @@ const { title } = Astro.props;
   summary {
     max-width: 500px;
     margin-bottom: 0.5rem;
+    overflow: hidden;
   }
   summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: +;
+    cursor: pointer;
     list-style: none;
-    margin-bottom: 0;
-    padding-top: 1.7rem;
-    padding-bottom: 1.7rem;
-    border-bottom: #fff solid 1px;
+    margin: 0;
+    padding: 1rem;
+    color: #fff; /* Text color for titles */
+    border-bottom: 1px solid #fff; /* Separator line */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
   }
+
   article {
     padding: 0.5rem;
   }
@@ -39,6 +43,7 @@ const { title } = Astro.props;
     height: 0;
     border-top: 0.5rem solid #fff;
     border-inline: 0.5rem solid transparent;
+    transition: transform 0.3s ease;
   }
   details[open] > summary::after {
     transform: rotate(-180deg);
