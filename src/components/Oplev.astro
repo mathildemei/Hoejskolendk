@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import BG from "../assets/images/Oplev.png";
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2">
+  <!-- left Column -->
+  <Image
+    src={BG}
+    alt="Fyr spiser vandmelon med orange bg"
+    class="w-full h-full sm:h-full w-full md:h-full w-full object-cover"
+  />
+
+  <!-- right Column -->
+  <div
+    class="relative bg-Purple-500 text-Grey-50 font-display text-display-h5 flex justify-center items-center h-full w-full group p-4 sm:p-6"
+  >
+    <!-- Default Content -->
+    <div
+      class="sm:flex justify-center items-center lg:w-[720px] h-[960px] flex flex-col items-center z-10 transition-opacity duration-300 group-hover:opacity-0"
+    >
+      <h1 class="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl">
+        OPLEV NYE KULTURER
+      </h1>
+      <p
+        class="font-primary-book text-xs sm:text-sm md:text-base lg:text-lg text-center"
+      >
+        Gili Air, Glili Islands
+      </p>
+    </div>
+
+    <!-- Hidden Hover Content -->
+    <div
+      class="absolute inset-0 bg-Purple-500 text-Grey-50 font-primary-book p-4 sm:pl-lg pr-lg flex flex-col justify-start md:justify-center items-start opacity-0 transition-opacity duration-300 group-hover:opacity-100 overflow-y-auto"
+      style="max-height: 100%;"
+    >
+      <h1
+        class="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4 text-left"
+      >
+        HØJSKOLEOPHOLD I UDLANDET
+      </h1>
+      <p
+        class="mb-4 leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg text-left"
+      >
+        Når du rejser på højskole i udlandet med HÖJSKOLENDK…
+      </p>
+      <ul
+        class="mb-4 leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg list-none text-left"
+      >
+        <li>
+          › Bliver du en del af et fantastisk fællesskab med et stærkt
+          sammenhold
+        </li>
+        <li>
+          › Får du masser af vilde naturoplevelser, adventure og spændende
+          kulturmøder
+        </li>
+        <li>
+          › Opdager du nye og stærke sider af dig selv, flytter grænser og får
+          mere selvtillid
+        </li>
+        <li>
+          › Rejser du altid med danske passionerede rejseledere og engagerede
+          undervisere
+        </li>
+        <li>
+          › Får du et uforglemmeligt, unikt og trygt rejseeventyr for livet
+        </li>
+      </ul>
+      <p
+        class="leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg text-left"
+      >
+        Med vores unikke kombination af højskole, grupperejser, rejseeventyr,
+        frihed, kulturmøder og spændende undervisning, vil vi inspirere dig til
+        at finde ind til hvad der er vigtigst for dig i livet – hvad du
+        virkeligt brænder for og kan mærke er meningsfuldt – så du kan forfølge
+        dine drømme.
+      </p>
+      <br />
+      <p
+        class="leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg text-left"
+      >
+        Gå på opdagelse her på siden efter dit livs eventyr – på højskole i
+        udlandet med HÖJSKOLENDK.
+      </p>
+      <br />
+      <p
+        class="leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg text-left"
+      >
+        Velkommen!
+      </p>
+    </div>
+  </div>
+</section>
