@@ -2,7 +2,7 @@
 const { title } = Astro.props;
 ---
 
-<section>
+<section class="container">
   <details class="font-display text-Grey-50 text-xl">
     <summary>{title}</summary>
     <article>
@@ -12,40 +12,43 @@ const { title } = Astro.props;
 </section>
 
 <style>
-  details,
-  summary {
-    max-width: 500px;
-    margin-bottom: 0.5rem;
-    overflow: hidden;
+  .container h1 {
+    color: #fff;
+    text-align: center;
   }
+
+  details {
+    border-bottom: #fff solid 2px;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
   summary {
+    padding: 0.5em 1.3rem;
+    list-style: none;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    list-style: none;
-    margin: 0;
-    padding: 1rem;
-    color: #fff; /* Text color for titles */
-    border-bottom: 1px solid #fff; /* Separator line */
-    font-weight: bold;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    transition: height 1s ease;
   }
 
-  article {
-    padding: 0.5rem;
+  summary::-webkit-details-marker {
+    display: none;
   }
 
-  /* Arrow icon */
-  summary::after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-top: 0.5rem solid #fff;
-    border-inline: 0.5rem solid transparent;
-    transition: transform 0.3s ease;
+  summary:after {
+    content: "\002B";
   }
-  details[open] > summary::after {
-    transform: rotate(-180deg);
+
+  details[open] summary {
+    border-bottom: 1px solid #fff;
+    margin-bottom: 0.5em;
+  }
+
+  details[open] summary:after {
+    content: "\00D7";
+  }
+
+  details[open] div {
+    padding: 0.5em 1em;
   }
 </style>
