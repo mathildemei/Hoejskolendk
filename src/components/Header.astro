@@ -1,5 +1,65 @@
 ---
+import Link from "../components/Link.astro";
 ---
-<div>
-Header - tilføj navigation mm.
+
+<div
+  x-data="{ showmenu: false }"
+  x-init="
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      showHeader = currentScroll > 100 && currentScroll > lastScroll;
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  "
+  :class="{ 'translate-y-0': showHeader, '-translate-y-full': !showHeader }"
+  class="fixed top-0 left-0 w-full bg-Green-900 text-Grey-50 shadow-lg z-50 transition-transform duration-300 pt-2xs pb-2xs"
+>
+  <div id="navbar" class="flex flex-row justify-between">
+    <div
+      id="logo"
+      class="text-primary-p-lg font-display text-Grey-50 flex flex-row justify-between pl-3xl"
+    >
+      <a href="#home">HÖJSKOLENDK</a>
+    </div>
+    <nav
+      id="desktopmenu"
+      class="hidden lg:flex flex-grow justify-center font-primary-book text-Grey-50 font-primary-h2"
+    >
+      <ul class="flex flex-row gap-4 justify-center">
+        <li class=""><Link href="/destinationer">Destinationer</Link></li>
+        <li class=""><Link href="/">Om os</Link></li>
+        <li class=""><Link href="/">Tilmeld</Link></li>
+        <li class=""><Link href="/">Infomoede</Link></li>
+      </ul>
+    </nav>
+    <button
+      id="burgermenu"
+      class="lg:hidden font-primary-book text-Grey-50 font-primary-h2 pr-md"
+      x-on:click="showmenu = ! showmenu">MENU</button
+    >
+  </div>
+  <nav
+    id="mobilmenu"
+    class="flex flex-col content-center font-primary-book text-Grey-50 font-primary-h2"
+    x-show="showmenu"
+    x-transition
+    x-on:click="showmenu = false"
+    x-on:click.outside="showmenu = false"
+  >
+    <ul>
+      <li class="pl-3xl pt-sm pb-2xs text-right pr-md">
+        <Link href="/destinationer">Destinationer</Link>
+      </li>
+      <li class="pl-3xl pt-3xs pb-2xs text-right pr-md">
+        <Link href="/">Om os</Link>
+      </li>
+      <li class="pl-3xl pt-3xs pb-2xs text-right pr-md">
+        <Link href="/">Tilmeld</Link>
+      </li>
+      <li class="pl-3xl pt-3xs pb-2xs text-right pr-md">
+        <Link href="/">Infomøde</Link>
+      </li>
+    </ul>
+  </nav>
 </div>
