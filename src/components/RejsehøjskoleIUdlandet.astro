@@ -1,0 +1,35 @@
+---
+import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import bjerge from "../assets/images/bjerge.jpg";
+---
+
+<section
+  class="h-screen flex items-center justify-center bg-Green-200 relative"
+>
+  <div class="absolute flex items-center justify-center inset-0">
+    <!-- Use Image component for optimized image handling -->
+    <Image
+      src={bjerge}
+      alt="Background Image"
+      class="w-[80%] h-[80%] object-cover"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="z-10 text-center px-6 sm:px-12">
+    <!-- Responsive heading with different sizes -->
+    <h1 class="text-white text-5xl sm:text-6xl md:text-8xl font-display">
+      REJSEHØJSKOLE I UDLANDET
+    </h1>
+    <!-- Responsive subheading with different sizes and margins -->
+    <h2
+      class="text-white text-lg sm:text-xl md:text-2xl font-primary-medium mb-4 sm:mb-6"
+    >
+      Med HÖJSKOLENDK faar du eventyr, faellesskab, meningsfuld laering og
+      venskaber for livet.
+    </h2>
+    <!-- Button (no changes, it stays as it is) -->
+    <Button class="">UDFORSK ALLE DESTINATIONER</Button>
+  </div>
+</section>
