@@ -1,0 +1,46 @@
+---
+const { title } = Astro.props;
+---
+
+<section>
+  <details class="font-display text-Grey-50 text-xl">
+    <summary>{title}</summary>
+    <article>
+      <slot />
+    </article>
+  </details>
+</section>
+
+<style>
+  details,
+  summary {
+    max-width: 500px;
+    margin-bottom: 0.5rem;
+  }
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: +;
+    list-style: none;
+    margin-bottom: 0;
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+    border-bottom: #fff solid 1px;
+  }
+  article {
+    padding: 0.5rem;
+  }
+
+  /* Arrow icon */
+  summary::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 0.5rem solid #fff;
+    border-inline: 0.5rem solid transparent;
+  }
+  details[open] > summary::after {
+    transform: rotate(-180deg);
+  }
+</style>
