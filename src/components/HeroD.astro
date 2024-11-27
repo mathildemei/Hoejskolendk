@@ -1,0 +1,37 @@
+---
+import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import baad from "../assets/images/baad.jpg";
+---
+
+<section
+  class="h-screen flex items-center justify-center bg-Green-900 relative"
+>
+  <!-- Background Image -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <Image
+      src={baad}
+      alt="Background Image"
+      class="w-[80%] h-[80%] object-cover"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- Text Content (placed inside the section) -->
+  <div class="z-10 text-center px-6 sm:px-12">
+    <!-- Responsive heading -->
+    <h1
+      class="text-white text-5xl sm:text-8xl md:text-9xl lg:text-[9rem] font-display"
+    >
+      DESTINATIONER
+    </h1>
+    <!-- Responsive subheading -->
+    <h2
+      class="text-white text-lg sm:text-xl md:text-2xl font-primary-medium mb-4 sm:mb-6"
+    >
+      Her faar du et overblik over vores eventyrlige hojskoleophold i udlandet
+    </h2>
+    <!-- Button -->
+    <Button class="">VAELG DIT EVENTYR</Button>
+  </div>
+</section>
