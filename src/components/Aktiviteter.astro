@@ -1,0 +1,133 @@
+---
+import { Image } from "astro:assets";
+import Team from "../assets/images/Team.png";
+import TeamHover from "../assets/images/Team_hover.png";
+import Aktivitet from "../assets/images/Aktiviteter.png";
+import AktivitetHover from "../assets/images/Aktiviteter_hover.png";
+import Frivilligt from "../assets/images/Frivilligt.png";
+import FrivilligtHover from "../assets/images/Frivilligt_hover.png";
+import Friuger from "../assets/images/Friuger.png";
+import FriugerHover from "../assets/images/Friuger_hover.png";
+import VN from "../assets/images/VN.png";
+import VNHover from "../assets/images/VN_hover.png";
+import Kultur from "../assets/images/Kultur.png";
+import KulturHover from "../assets/images/Kultur_hover.png";
+---
+
+<section class="bg-Green-200 pt-7xl pb-10xl">
+  <h1
+    class="text-2xl sm:text-3xl md:text-display-h5 text-grey-950 font-display text-center mb-8 sm:mb-10"
+  >
+    EN REJSEHØJSKOLE FYLDT MED OPLEVELSER
+  </h1>
+
+  <!-- Align images horizontally with responsive spacing -->
+  <article
+    class="flex flex-col sm:flex-row justify-center items-center sm:gap-4xl md:gap-7xl"
+  >
+    <!-- Team Section -->
+    <div
+      class="w-[140px] h-[210px] sm:w-[165px] sm:h-[248px] relative mb-6 sm:mb-2"
+    >
+      <Image
+        src={Team}
+        alt="Teambuilding billede"
+        class="w-full h-full object-cover transition-opacity duration-300 ease-in-out hover:opacity-0"
+        loading="lazy"
+      />
+      <Image
+        src={TeamHover}
+        alt="Teambuilding beskrivelse"
+        class="w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0 hover:opacity-100"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Aktivitet Section -->
+    <div
+      class="w-[180px] h-[270px] sm:w-[229px] sm:h-[248px] relative mb-6 sm:mb-0"
+    >
+      <Image
+        src={Aktivitet}
+        alt="Aktiviteter billede"
+        class="w-full h-full object-cover transition-opacity duration-300 ease-in-out hover:opacity-0"
+        loading="lazy"
+      />
+      <Image
+        src={AktivitetHover}
+        alt="Aktiviteter beskrivelse"
+        class="w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0 hover:opacity-100"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Frivilligt Section -->
+    <div class="w-[200px] h-[140px] sm:w-[344px] sm:h-[248px] relative">
+      <Image
+        src={Frivilligt}
+        alt="Frivilligt billede"
+        class="w-full h-full object-cover transition-opacity duration-300 ease-in-out hover:opacity-0"
+        loading="lazy"
+      />
+      <Image
+        src={FrivilligtHover}
+        alt="Frivilligt beskrivelse"
+        class="w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0 hover:opacity-100"
+        loading="lazy"
+      />
+    </div>
+  </article>
+  <article
+    class="pt-3xl flex flex-col sm:flex-row justify-center items-center sm:gap-4xl md:gap-7xl"
+  >
+    <!-- Friuger Section -->
+    <div class="w-[200px] h-[140px] sm:w-[344px] sm:h-[248px] relative">
+      <Image
+        src={Friuger}
+        alt="Friuger billede"
+        class="w-full h-full object-cover transition-opacity duration-300 ease-in-out hover:opacity-0"
+        loading="lazy"
+      />
+      <Image
+        src={FriugerHover}
+        alt="Friuger beskrivelse"
+        class="w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0 hover:opacity-100"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Vild natur Section -->
+    <div class="w-[280px] h-[314px] sm:w-[200px] sm:h-[280px] relative">
+      <Image
+        src={VN}
+        alt="Friuger billede"
+        class="w-full h-full object-cover transition-opacity duration-300 ease-in-out hover:opacity-0"
+        loading="lazy"
+      />
+      <Image
+        src={VNHover}
+        alt="Friuger beskrivelse"
+        class="w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0 hover:opacity-100"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Kultur Section -->
+    <div
+      class="w-[140px] h-[210px] sm:w-[165px] sm:h-[248px] relative mb-6 sm:mb-2"
+    >
+      <Image
+        src={Kultur}
+        alt="Teambuilding billede"
+        class="w-full h-full object-cover transition-opacity duration-300 ease-in-out hover:opacity-0"
+        loading="lazy"
+      />
+      <Image
+        src={KulturHover}
+        alt="Teambuilding beskrivelse"
+        class="w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0 hover:opacity-100"
+        loading="lazy"
+      />
+    </div>
+  </article>
+</section>
