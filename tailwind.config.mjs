@@ -118,6 +118,9 @@ export default {
                     '8xl': '228px',
                     '9xl': '228px',
                     '10xl': '344px',
+
+                    'fixed-card-width': '395px',
+                    'fixed-card-height': '493px',
                 },
 
         /* Tilføj dit typografiske hierarki herunder */

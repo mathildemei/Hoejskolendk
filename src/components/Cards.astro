@@ -1,36 +1,59 @@
 ---
-const {
-  url = "/destination",
-  cardimage = "",
-  cardimagalt = "",
-  cardimagbg = "",
-  cardimagbghover = "",
-  holdnavn = "",
-} = Astro.props;
+const { rejsenavn, cardimage, cardimagalt, cardimgBg, imgBgHover } =
+  Astro.props;
 ---
 
-<section
-  class="group relative w-full max-w-sm mx-auto bg-white shadow-md overflow-hidden rounded-lg"
-  style="background-color: ${cardimagbg};"
->
-  <!-- Background with hover effect -->
-  <div
-    class="absolute inset-0 transition-transform duration-300 ease-in-out"
-    style="background-color: ${cardimagbghover}; z-index: -1;"
+<section>
+  <h1
+    class="sm:flex flex-grow justify-center text-3xl pl-3 lg:flex flex-grow justify-center text-display-h5 text-Grey-950 font-display pt-5xl"
   >
-  </div>
+    ER DU KLAR TIL DIT LIVS EVENTYR?
+  </h1>
+  <article class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+    <!-- Card 1 -->
+    <div
+      class="w-fixed-card-width h-fixed-card-height bg-Orange-200 hover:bg-Orange-500"
+    >
+      <!-- <div class="flex items-center justify-center pt-3xl pb-3xl"> -->
+      <!-- <div
+        class="flex items-center justify-center pt-3xl pb-3xl"
+        data-bg="test"
+      > -->
+      <div
+        class="flex items-center justify-center pt-3xl pb-3xl group"
+        style={`background-image: url('/cards/${cardimgBg}');`}
+        data-cardimgbg={`/cards/${cardimgBg}`}
+        data-hoverbg={`/cards/${imgBgHover}`}
+        onmouseover="this.style.backgroundImage = 'url(' + this.dataset.hoverbg + ')';"
+        onmouseout="this.style.backgroundImage = 'url(' + this.dataset.cardimgbg + ')';"
+      >
+        <!-- <div
+        class="flex items-center justify-center pt-3xl pb-3xl group"
+        style={`background-image: url('/cards/${cardimgBg}');`}
+        data-cardimgbg={`/cards/${cardimgBg}`}
+        data-hoverbg={`/cards/${imgBgHover}`}
+      > -->
+        <img src={cardimage} alt={cardimagalt} />
+      </div>
+      <div class="flex justify-center pt-xs pl-2xs pr-2xs">
+        <p
+          class="text-white font-primary-book text-lg md:text-xl lg:text-primary-h2"
+        >
+          {rejsenavn}
+        </p>
+      </div>
+    </div>
+  </article>
 
-  <!-- Main Image -->
-  <a href={url} class="block">
-    <img
-      src={cardimage}
-      alt={cardimagalt}
-      class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-    />
-  </a>
+  <!-- <style>
+    .group:hover {
+      background-image: url({`/cards/${imgBgHover}`});
+    }
+  </style> -->
 
-  <!-- Card Content -->
-  <div class="p-4 text-center">
-    <h3 class="text-base font-semibold text-gray-700">{holdnavn}</h3>
-  </div>
+  <!-- <style>
+  .bg_hcm:hover {
+    background-image: url({imgBgHover});
+  }
+</style> -->
 </section>

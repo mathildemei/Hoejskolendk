@@ -10,7 +10,9 @@ import Cards from "../components/Cards.astro";
   </h1>
   <article class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
     <!-- Card 1 -->
-    <div class="w-[395px] h-[493px] bg-Orange-200 hover:bg-Orange-500">
+    <div
+      class="w-fixed-card-width h-fixed-card-height bg-Orange-200 hover:bg-Orange-500"
+    >
       <div class="bg_hcm flex items-center justify-center pt-3xl pb-3xl">
         <img src="/cards/HCM_img.png" alt="Person spiser vandmelon" />
       </div>
@@ -23,6 +25,13 @@ import Cards from "../components/Cards.astro";
       </div>
     </div>
   </article>
+  <Cards
+    cardimage="cards/HCM_img.png"
+    cardimagealt="Hip-hoppere"
+    rejsenavn="New York, Hawaii, Caribien & Mexico"
+    cardimgBg="HCM_bg.png"
+    imgBgHover="HCM_bg_hover.png"
+  />
 </section>
 
 <style>
