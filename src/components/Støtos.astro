@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import traer from "../assets/images/traer.jpg";
+import logo from "../assets/images/logo.png";
+---
+
+<section
+  class="h-screen w-full flex items-center justify-center bg-Green-900
+relative overflow-hidden"
+>
+  <div class="absolute inset-0 overflow-hidden">
+    <!-- Background Image -->
+    <Image
+      src={traer}
+      alt="Background Image"
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- Centered Box -->
+  <div
+    class="z-10 bg-Green-900 text-white p-6 sm:p-12 flex flex-col items-center max-w-lg text-center"
+  >
+    <!-- Logo -->
+    <Image
+      src={logo}
+      alt="Logo"
+      style="width: 194px; height: 194px; display: block;"
+      class="object-contain pb-3xs"
+      format="png"
+    />
+    <!-- Text Content -->
+    <p class="text-lg sm:text-xl font-primary-medium">
+      Vi stotter Verdens Skoves arbejde og vi planter 50 traeer for hver elev
+      der rejser med os!
+    </p>
+    <p class="mt-4 text-base sm:text-lg font-primary-medium pb-lg">
+      Vi har allerede fredet <strong>106.785 m²</strong> regnskov.
+    </p>
+  </div>
+</section>
