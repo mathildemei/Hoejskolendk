@@ -120,7 +120,7 @@ export default {
                     '10xl': '344px',
 
                     'fixed-card-width': '395px',
-                    'fixed-card-height': '493px',
+                    'fixed-card-height': '495px',
                 },
 
         /* Tilføj dit typografiske hierarki herunder */
