@@ -1,18 +1,16 @@
 ---
 import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
-import baad from "../assets/images/baad.jpg";
+import baad from "../assets/images/baad.png";
 ---
 
-<section
-  class="h-screen flex items-center justify-center bg-Green-900 relative"
->
+<section class="pt-5xl flex items-center justify-center bg-Green-900 relative">
   <!-- Background Image -->
   <div class="absolute inset-0 flex items-center justify-center">
     <Image
       src={baad}
       alt="Background Image"
-      class="w-[80%] h-[80%] object-cover"
+      class="w-[full] h-[full] object-cover"
       loading="lazy"
     />
   </div>

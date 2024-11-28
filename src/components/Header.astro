@@ -13,53 +13,60 @@ import Link from "../components/Link.astro";
     });
   "
   :class="{ 'translate-y-0': showHeader, '-translate-y-full': !showHeader }"
-  class="fixed top-0 left-0 w-full bg-Green-900 text-Grey-50 shadow-lg z-50 transition-transform duration-300 pt-2xs pb-2xs"
+  class="fixed top-0 left-0 w-full bg-Grey-50 text-Grey-50 shadow-lg z-50 transition-transform duration-300 pt-2xs pb-2xs"
 >
-  <div id="navbar" class="flex flex-row justify-between pl-md">
+  <div id="navbar" class="flex items-center justify-between px-md">
+    <!-- Logo -->
     <div
       id="logo"
-      class="text-primary-p-lg font-display text-Grey-50 flex flex-row justify-start"
+      class="text-primary-p-lg font-display text-Grey-950 lg:hidden"
     >
-      <a href="/">HÖJSKOLENDK</a>
+      <Link href="/">HÖJSKOLENDK</Link>
     </div>
+
+    <!-- Desktop Menu -->
     <nav
       id="desktopmenu"
-      class="hidden lg:flex flex-grow justify-center font-primary-book text-Grey-50 font-primary-h2"
+      class="hidden lg:flex flex-grow items-center justify-between font-primary-book text-Grey-950 font-primary-h2"
     >
-      <ul class="flex flex-row gap-4 justify-center">
-        <li class=""><Link href="/destinationer">Destinationer</Link></li>
-        <li class=""><Link href="/">Om os</Link></li>
-        <li class=""><Link href="/">Tilmeld</Link></li>
-        <li class=""><Link href="/">Infomoede</Link></li>
+      <!-- Left Menu -->
+      <ul class="flex flex-row gap-4">
+        <li><Link href="/destinationer">Destinationer</Link></li>
+        <li><Link href="/">Tilmeld</Link></li>
+      </ul>
+
+      <!-- Centered Logo (Desktop Only) -->
+      <div
+        id="center-logo"
+        class="text-primary-p-lg font-display text-Grey-950 hidden lg:block"
+      >
+        <a href="/">HÖJSKOLENDK</a>
+      </div>
+
+      <!-- Right Menu -->
+      <ul class="flex flex-row gap-4">
+        <li><Link href="/">Om os</Link></li>
+        <li><Link href="/">Infomoede</Link></li>
       </ul>
     </nav>
+
+    <!-- Mobile Burger Menu -->
     <button
       id="burgermenu"
-      class="lg:hidden font-primary-book text-Grey-50 font-primary-h2 pr-md"
-      x-on:click="showmenu = ! showmenu">MENU</button
+      class="lg:hidden font-primary-book text-Grey-950 font-primary-h2"
+      x-on:click="showmenu = !showmenu"
     >
+      MENU
+    </button>
   </div>
-  <nav
-    id="mobilmenu"
-    class="flex flex-col content-center font-primary-book text-Grey-50 font-primary-h2"
-    x-show="showmenu"
-    x-transition
-    x-on:click="showmenu = false"
-    x-on:click.outside="showmenu = false"
-  >
-    <ul>
-      <li class="pl-3xl pt-sm pb-2xs text-right pr-md">
-        <Link href="/destinationer">Destinationer</Link>
-      </li>
-      <li class="pl-3xl pt-3xs pb-2xs text-right pr-md">
-        <Link href="/">Om os</Link>
-      </li>
-      <li class="pl-3xl pt-3xs pb-2xs text-right pr-md">
-        <Link href="/">Tilmeld</Link>
-      </li>
-      <li class="pl-3xl pt-3xs pb-2xs text-right pr-md">
-        <Link href="/">Infomøde</Link>
-      </li>
+
+  <!-- Mobile Menu -->
+  <div id="mobilemenu" class="lg:hidden" x-show="showmenu" x-transition>
+    <ul class="flex flex-col items-end gap-4 p-md text-Grey-950">
+      <li><Link href="/destinationer">Destinationer</Link></li>
+      <li><Link href="/">Tilmeld</Link></li>
+      <li><Link href="/">Om os</Link></li>
+      <li><Link href="/">Infomøde</Link></li>
     </ul>
-  </nav>
+  </div>
 </div>
