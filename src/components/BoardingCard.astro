@@ -1,3 +1,76 @@
 ---
+import Button from "../components/Button.astro";
 
+const {
+  rejsenavn,
+  rejsetext,
+  faapladser = "false",
+  venteliste = "false",
+  varighed,
+  dato,
+  pris,
+  cardimgBg,
+  imgBgHover,
+} = Astro.props;
 ---
+
+<section>
+  <div class="flex items-center justify-center">
+    <div
+      class="flex items-center justify-center group bg-no-repeat hover:text-Grey-50"
+      style={`background-image: url('/boarding/${cardimgBg}');`}
+      data-cardimgbg={`/boarding/${cardimgBg}`}
+      data-hoverbg={`/boarding/${imgBgHover}`}
+      onmouseover="this.style.backgroundImage = 'url(' + this.dataset.hoverbg + ')';"
+      onmouseout="this.style.backgroundImage = 'url(' + this.dataset.cardimgbg + ')';"
+    >
+      <div class="flex flex-cols-2 gap-8xl">
+        <div class="">
+          <h2
+            class="flex flex-grow justify-left items-left text-2xl text-Grey-950 font-display pt-36 pl-48 hover:text-Grey-50"
+          >
+            {rejsenavn}
+          </h2>
+          <p class="text-primary-p-md w-[580px] pl-48 pt-3xs">
+            {rejsetext}
+          </p>
+
+          {
+            faapladser === "true" && (
+              <div class="font-display text-Orange-500 pl-48 pt-xs">
+                Få pladser tilbage
+              </div>
+            )
+          }
+
+          {
+            venteliste === "true" && (
+              <div class="font-display text-[#DF2929] pl-48 pt-xs">
+                Venteliste
+              </div>
+            )
+          }
+
+          <div class="pl-48 pt-sm pb-md">
+            <Button> TILMELD OPHOLDET →</Button>
+          </div>
+        </div>
+        <div class="pt-40 pr-8xl">
+          <div class="pb-xs">
+            <p>Varighed:</p>
+            <p class="font-display text-xl">{varighed}</p>
+          </div>
+          <div class="pb-xs">
+            <p>Næste afgang:</p>
+            <p class="font-display text-xl">{dato}</p>
+          </div>
+          <div>
+            <p>Ca. pris:</p>
+            <p class="font-display text-xl">{pris}</p>
+            <p>✈ Inkl. fly</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
