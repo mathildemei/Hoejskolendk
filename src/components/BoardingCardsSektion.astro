@@ -1,0 +1,61 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<section class="bg-Orange-100">
+  <article>
+    <h1
+      class="sm:flex flex-grow justify-center text-3xl pl-2xl text-center lg:flex flex-grow justify-center text-display-h5 text-Grey-950 font-display pt-5xl pb-2xl"
+    >
+      VÆLG DIT EVENTYR
+    </h1>
+
+    <div class="bg hover:text-Grey-50">
+      <div class="flex flex-cols-2 gap-8xl">
+        <div>
+          <h2
+            class="flex flex-grow justify-left items-left text-2xl text-Grey-950 font-display pt-36 pl-48 hover:text-Grey-50"
+          >
+            New York, Caribien, Hawaii & Mexico
+          </h2>
+          <p class="text-primary-p-md w-[580px] pl-48 pt-3xs">
+            Vi tager dig med til tre enestående lande på en
+            eventyrlig højskolerejse, der giver dig masser af natur- og
+            adventure oplevelser og spændende kulturmøder...
+          </p>
+          <p class="font-display text-Orange-500 pl-48 pt-xs">
+            Få pladser tilbage
+          </p>
+          <div class="pl-48 pt-sm pb-md">
+            <Button>VAELG DIT EVENTYR</Button>
+          </div>
+        </div>
+        <div class="pt-40">
+          <div class="pb-xs">
+            <p>Varighed:</p>
+            <p class="font-display text-xl">3 MÅNEDER</p>
+          </div>
+          <div class="pb-xs">
+            <p>Næste afgang:</p>
+            <p class="font-display text-xl">CA. 09. JAN 2025</p>
+          </div>
+          <div>
+            <p>Ca. pris:</p>
+            <p class="font-display text-xl">58.900 DKK</p>
+            <p>✈ Inkl. fly</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <style>
+    .bg {
+      background-image: url(/boarding/CHM.png);
+    }
+
+    .bg:hover {
+      background-image: url(/boarding/CHM_hover.png);
+    }
+  </style>
+</section>
